@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class BubbleSort implements SortingCommonInterface {
     /**
-     * @param list It'll sort the input arrayList.
+     * @param list It'll sort the input arrayList using recursion.
      */
     @Override
     public void sort (ArrayList<Integer> list) {
@@ -25,6 +25,18 @@ public class BubbleSort implements SortingCommonInterface {
         }
         if (swapCount != 0) {
             sort(list);
+        }
+    }
+
+    public void sortWithOutRecursion (ArrayList<Integer> list) {
+        for (int j = 0; j < list.size() - 1; j++) {
+            for (int i = 0; i < (list.size() - j - 1); i++) {
+                if (list.get(i + 1) < list.get(i)) {
+                    list.set(i, list.get(i + 1) + list.get(i));
+                    list.set(i + 1, list.get(i) - list.get(i + 1));
+                    list.set(i, list.get(i) - list.get(i + 1));
+                }
+            }
         }
     }
 }
