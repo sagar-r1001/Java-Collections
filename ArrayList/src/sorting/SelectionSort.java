@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 /**
  * This algorithm sorts an array by repeatedly searching for the minimum element in the unsorted sub-array and adds it to the sorted sub-array.
+ * Time Complexity: O(N^2)
  */
 public class SelectionSort implements SortingCommonInterface {
 
